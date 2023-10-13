@@ -3207,8 +3207,8 @@
 
 		// Examples:
 		// http://maps.google.com/?ll=48.857995,2.294297&spn=0.007666,0.021136&t=m&z=16
-		// https://www.google.com/maps/@37.7852006,-122.4146355,14.65z
-		// https://www.google.com/maps/place/Googleplex/@37.4220041,-122.0833494,17z/data=!4m5!3m4!1s0x0:0x6c296c66619367e0!8m2!3d37.4219998!4d-122.0840572
+		// https://[WEBSITE-TEMPO]/maps/@37.7852006,-122.4146355,14.65z
+		// https://[WEBSITE-TEMPO]/maps/place/Googleplex/@37.4220041,-122.0833494,17z/data=!4m5!3m4!1s0x0:0x6c296c66619367e0!8m2!3d37.4219998!4d-122.0840572
 		gmap_place : {
 			matcher : /(maps\.)?google\.([a-z]{2,3}(\.[a-z]{2})?)\/(((maps\/(place\/(.*)\/)?\@(.*),(\d+.?\d+?)z))|(\?ll=))(.*)?/i,
 			type    : 'iframe',
@@ -3218,9 +3218,9 @@
 		},
 
 		// Examples:
-		// https://www.google.com/maps/search/Empire+State+Building/
-		// https://www.google.com/maps/search/?api=1&query=centurylink+field
-		// https://www.google.com/maps/search/?api=1&query=47.5951518,-122.3316393
+		// https://[WEBSITE-TEMPO]/maps/search/Empire+State+Building/
+		// https://[WEBSITE-TEMPO]/maps/search/?api=1&query=centurylink+field
+		// https://[WEBSITE-TEMPO]/maps/search/?api=1&query=47.5951518,-122.3316393
 		gmap_search : {
 			matcher : /(maps\.)?google\.([a-z]{2,3}(\.[a-z]{2})?)\/(maps\/search\/)(.*)/i,
 			type    : 'iframe',
