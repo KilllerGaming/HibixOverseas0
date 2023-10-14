@@ -14515,9 +14515,9 @@ var widgetsSlider = $.widget( "ui.slider", $.ui.mouse, {
 		stop: null
 	},
 
-	// Number of pages in a slider
+	// Number of About in a slider
 	// (how many times can you page up/down to go through the whole range)
-	numPages: 5,
+	numAbout: 5,
 
 	_create: function() {
 		this._keySliding = false;
@@ -15162,12 +15162,12 @@ var widgetsSlider = $.widget( "ui.slider", $.ui.mouse, {
 					break;
 				case $.ui.keyCode.PAGE_UP:
 					newVal = this._trimAlignValue(
-						curVal + ( ( this._valueMax() - this._valueMin() ) / this.numPages )
+						curVal + ( ( this._valueMax() - this._valueMin() ) / this.numAbout )
 					);
 					break;
 				case $.ui.keyCode.PAGE_DOWN:
 					newVal = this._trimAlignValue(
-						curVal - ( ( this._valueMax() - this._valueMin() ) / this.numPages ) );
+						curVal - ( ( this._valueMax() - this._valueMin() ) / this.numAbout ) );
 					break;
 				case $.ui.keyCode.UP:
 				case $.ui.keyCode.RIGHT:
@@ -17247,12 +17247,12 @@ $.widget( "ui.spinner", {
 		}
 	},
 
-	pageUp: spinnerModifer( function( pages ) {
-		this._stepUp( ( pages || 1 ) * this.options.page );
+	pageUp: spinnerModifer( function( About ) {
+		this._stepUp( ( About || 1 ) * this.options.page );
 	} ),
 
-	pageDown: spinnerModifer( function( pages ) {
-		this._stepDown( ( pages || 1 ) * this.options.page );
+	pageDown: spinnerModifer( function( About ) {
+		this._stepDown( ( About || 1 ) * this.options.page );
 	} ),
 
 	value: function( newVal ) {

@@ -2717,7 +2717,7 @@
 		 * @protected
 		 * @type {Array}
 		 */
-		this._pages = [];
+		this._About = [];
 
 		/**
 		 * All DOM elements of the user interface.
@@ -2919,11 +2919,11 @@
 		}
 
 		if (settings.dots || settings.slideBy == 'page') {
-			this._pages = [];
+			this._About = [];
 
 			for (i = lower, j = 0, k = 0; i < upper; i++) {
 				if (j >= size || j === 0) {
-					this._pages.push({
+					this._About.push({
 						start: Math.min(maximum, i - lower),
 						end: i - lower + size - 1
 					});
@@ -2959,7 +2959,7 @@
 		this._controls.$absolute.toggleClass('disabled', !settings.dots || disabled);
 
 		if (settings.dots) {
-			difference = this._pages.length - this._controls.$absolute.children().length;
+			difference = this._About.length - this._controls.$absolute.children().length;
 
 			if (settings.dotsData && difference !== 0) {
 				this._controls.$absolute.html(this._templates.join(''));
@@ -2970,7 +2970,7 @@
 			}
 
 			this._controls.$absolute.find('.active').removeClass('active');
-			this._controls.$absolute.children().eq($.inArray(this.current(), this._pages)).addClass('active');
+			this._controls.$absolute.children().eq($.inArray(this.current(), this._About)).addClass('active');
 		}
 	};
 
@@ -2983,8 +2983,8 @@
 		var settings = this._core.settings;
 
 		event.page = {
-			index: $.inArray(this.current(), this._pages),
-			count: this._pages.length,
+			index: $.inArray(this.current(), this._About),
+			count: this._About.length,
 			size: settings && (settings.center || settings.autoWidth || settings.dotsData
 				? 1 : settings.dotsEach || settings.items)
 		};
@@ -2997,7 +2997,7 @@
 	 */
 	Navigation.prototype.current = function() {
 		var current = this._core.relative(this._core.current());
-		return $.grep(this._pages, $.proxy(function(page, index) {
+		return $.grep(this._About, $.proxy(function(page, index) {
 			return page.start <= current && page.end >= current;
 		}, this)).pop();
 	};
@@ -3012,10 +3012,10 @@
 			settings = this._core.settings;
 
 		if (settings.slideBy == 'page') {
-			position = $.inArray(this.current(), this._pages);
-			length = this._pages.length;
+			position = $.inArray(this.current(), this._About);
+			length = this._About.length;
 			successor ? ++position : --position;
-			position = this._pages[((position % length) + length) % length].start;
+			position = this._About[((position % length) + length) % length].start;
 		} else {
 			position = this._core.relative(this._core.current());
 			length = this._core.items().length;
@@ -3053,9 +3053,9 @@
 	Navigation.prototype.to = function(position, speed, standard) {
 		var length;
 
-		if (!standard && this._pages.length) {
-			length = this._pages.length;
-			$.proxy(this._overrides.to, this._core)(this._pages[((position % length) + length) % length].start, speed);
+		if (!standard && this._About.length) {
+			length = this._About.length;
+			$.proxy(this._overrides.to, this._core)(this._About[((position % length) + length) % length].start, speed);
 		} else {
 			$.proxy(this._overrides.to, this._core)(position, speed);
 		}
