@@ -77,7 +77,10 @@
 
 							<li class="dropdown"><a href="#">Study In</a>
 								<ul>
-									<li><a href="../page-country.html">Countries</a></li>
+									<li><a href="../page-country.html">US</a></li>
+									<li><a href="../page-country.html">UK</a></li>
+									<li><a href="../page-country.html">Canda</a></li>
+									<li><a href="../page-country.html">Australia</a></li>
 								</ul>
 							</li>
 
@@ -215,6 +218,14 @@
 		</div><!-- End Sticky Menu -->
 	</header>
 	<!--End Main Header -->
+	<!-- Modal -->
+
+	<div id="popup-overlay">
+		<div id="popup">
+			<span id="close-button" onclick="closeModal()">&#10006;</span>
+			<img src="./images/Hibix Invitation Card.png" class="img-fluid" alt="Image Popup">
+		</div>
+	</div>
 
 	<!-- Banner Section -->
 	<section class="banner-section-two">
@@ -1024,6 +1035,22 @@
 <script src="js/swiper.min.js"></script>
 <script src="js/owl.js"></script>
 <script src="js/script.js"></script>
+<script>
+    // Function to show the modal
+    function showModal() {
+        document.getElementById('popup-overlay').style.display = 'flex';
+    }
+
+    // Function to close the modal
+    function closeModal() {
+        document.getElementById('popup-overlay').style.display = 'none';
+    }
+
+    // Show the modal when the page loads
+    window.onload = function () {
+        showModal();
+    };
+</script>
 </body>
 
 </html>
