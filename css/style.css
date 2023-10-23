@@ -7467,6 +7467,8 @@ Section Title
   z-index: 2;
   -webkit-transition: all 400ms ease;
   transition: all 400ms ease;
+  height: 405px;
+  object-fit: cover;
 }
 .team-block .info-box {
   position: relative;
